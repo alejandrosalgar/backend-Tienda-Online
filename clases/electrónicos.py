@@ -10,8 +10,3 @@ class Electronicos:
         print(f"Marca: {self.marca}")
         print(f"Modelo: {self.modelo}")
         print(f"Cantidad: {self.cantidad}")
-
-    def agregar_producto_al_carrito(self, carrito):
-        """Agrega el producto al carrito."""
-        carrito.append(self)
-        print("\nProducto agregado al carrito.\n")
