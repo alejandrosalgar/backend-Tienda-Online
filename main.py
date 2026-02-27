@@ -15,20 +15,38 @@ def menu():
     print("------------------------------")
 
 
+def calcular_total():
+    total = 0
+    for producto in carrito:
+        total += producto.cantidad * producto.precio
+    return total
+
+
+def aplicar_descuento(total):
+    """
+    Aplica 10% de descuento si el total es mayor o igual a 200000
+    """
+    if total >= 200000:
+        return total * 0.9
+    return total
+
+
 def ver_carrito():
     if len(carrito) == 0:
         print("\nEl carrito está vacío.\n")
     else:
         print("\nProductos en el carrito:\n")
-        total_general = 0
 
         for i, producto in enumerate(carrito, start=1):
             print(f"\nProducto #{i}")
             producto.imprimir_datos()
-            total_general += producto.cantidad * producto.precio
             print("----------------------")
 
-        print(f"\nTOTAL A PAGAR: ${total_general}\n")
+        subtotal = calcular_total()
+        total_final = aplicar_descuento(subtotal)
+
+        print(f"\nSubtotal: ${subtotal}")
+        print(f"Total con descuento: ${total_final}\n")
 
 
 def main():
@@ -64,6 +82,15 @@ def main():
                 precio = float(input("Precio unitario: "))
 
                 producto = Ropa(tipo, genero, color, marca, talla, cantidad, precio)
+                producto.agregar_producto_al_carrito(carrito)
+
+            elif categoria == "3":
+                tipo = input("Tipo de alimento: ")
+                nombre = input("Nombre: ")
+                cantidad = int(input("Cantidad: "))
+                precio = float(input("Precio unitario: "))
+
+                producto = Alimentos(tipo, nombre, cantidad, precio)
                 producto.agregar_producto_al_carrito(carrito)
 
             else:
