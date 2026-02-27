@@ -1,4 +1,6 @@
 class Ropa:
+    """Clase para representar una prenda de ropa."""
+
     def __init__(
         self,
         tipo_prenda: str,

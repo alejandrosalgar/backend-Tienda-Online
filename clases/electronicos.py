@@ -1,4 +1,6 @@
 class Electronicos:
+    """Clase para representar un artículo electrónico."""
+
     def __init__(self, tipo_articulo: str, marca: str, modelo: str, cantidad: int):
         self.tipo_articulo = tipo_articulo
         self.marca = marca
