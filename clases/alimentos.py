@@ -1,3 +1,4 @@
+feat--Clases-de-Alimentos-Electronicos-y-Ropa
 class Alimentos:
     """Clase para representar un alimento."""
 
@@ -15,3 +16,4 @@ class Alimentos:
         """Agrega el producto al carrito"""
         carrito.append(self)
         print("\nProducto agregado al carrito.\n")
+
