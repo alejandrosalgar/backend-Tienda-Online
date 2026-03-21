@@ -48,7 +48,7 @@ El sistema está organizado en módulos CRUD y entidades, siguiendo una estructu
 
 En el siguiente enlace se puede ver una explicación general del proyecto, su estructura, funcionamiento por consola y organización del código:
 
-**URL del video:** [Agregar aquí el enlace]
+**URL del video:** (https://www.canva.com/design/DAHDg0XRa9E/lPWWixcHax3KDGEXhryalQ/edit?utm_content=DAHDg0XRa9E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ---
 
