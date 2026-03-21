@@ -1,63 +1,86 @@
 # backend-Tienda-Online
-Proyecto de tienda online
+
+Sistema backend de tienda online desarrollado en Python con arquitectura modular, manejo de entidades, operaciones CRUD y conexión a base de datos.
 
 ## Descripción
 
-Este proyecto es una simulación sencilla de una tienda online hecha en Python.  
-El usuario puede agregar productos al carrito, ver los productos agregados y eliminar productos si lo desea.  
+Este proyecto es una aplicación de consola para la administración básica de una tienda online.  
+Permite el inicio de sesión o creación del primer usuario y, una vez autenticado, acceder a distintos módulos para gestionar:
 
-Es un programa que funciona por consola y utiliza clases para organizar los diferentes tipos de productos.
+- Categorías
+- Productos
+- Pedidos
+- Pagos
+- Envíos
+- Usuarios
+
+El sistema está organizado en módulos CRUD y entidades, siguiendo una estructura más cercana a un backend real.
+
+---
+
+## Características principales
+
+- Inicio de sesión de usuarios
+- Creación del primer usuario si la base de datos está vacía
+- Menú principal interactivo por consola
+- CRUD de categorías
+- CRUD de productos
+- CRUD de pedidos
+- CRUD de pagos
+- CRUD de envíos
+- Persistencia de datos en base de datos
+- Código modular organizado por responsabilidades
+
+---
+
+## Tecnologías utilizadas
+
+- **Python 3**
+- **SQLAlchemy**
+- **PostgreSQL / Neon** (según tu configuración actual)
+- **dotenv** para variables de entorno
+- **UUID** como identificadores
+- **Git y GitHub** para control de versiones
+
+---
+
+## Video de explicación
+
+En el siguiente enlace se puede ver una explicación general del proyecto, su estructura, funcionamiento por consola y organización del código:
+
+**URL del video:** (https://www.canva.com/design/DAHDg0XRa9E/lPWWixcHax3KDGEXhryalQ/edit?utm_content=DAHDg0XRa9E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ---
 
 ## Estructura del proyecto
 
-- `main.py` → Contiene el menú y la lógica principal.  
-- Carpeta `clases/`:
-  - `ropa.py`
-  - `electronicos.py`
-  - `alimentos.py`
+```bash
+backend-Tienda-Online/
+│
+├── src/
+│   ├── crud/
+│   │   ├── categoria.py
+│   │   ├── envio.py
+│   │   ├── pago.py
+│   │   ├── pedido.py
+│   │   ├── producto.py
+│   │   └── usuario.py
+│   │
+│   ├── database/
+│   │   └── config.py
+│   │
+│   └── entities/
+│       ├── categoria.py
+│       ├── envio.py
+│       ├── pago.py
+│       ├── pedido.py
+│       ├── producto.py
+│       └── usuario.py
+│
+├── .env
+├── .gitignore
+├── main.py
+├── migrarDb.py
+├── README.md
+└── requirements.txt
 
----
-
-##  Productos disponibles
-## Objetivo del proyecto
-
-Desarrollar un proyecto en Python aplicando:
-
-- Programación Orientada a Objetos (POO).  
-- Buenas prácticas según PEP 8, usando el formateador Black.  
-- Control de versiones con Git, trabajando con ramas protegidas:
-  - `dev`
-  - `qa`
-  - `prod`
-- Uso de ramas de aporte con el formato `feat/...`.  
-- Ropa (tipo, género, color, marca, talla, cantidad)  
-- Electrónicos (tipo, marca, modelo, cantidad)  
-- Alimentos (tipo, nombre, cantidad)  
-
----
-
-## Funcionalidades
-
-1. Agregar producto al carrito  
-2. Ver carrito  
-3. Eliminar producto  
-4. Salir del programa  
-
-Los productos se guardan en una lista llamada `carrito`.
-
----
-
-## Objetivo del proyecto
-
-Desarrollar un proyecto en Python aplicando:
-
-- Programación Orientada a Objetos (POO).  
-- Buenas prácticas según PEP 8, usando el formateador Black.  
-- Control de versiones con Git, trabajando con ramas protegidas:
-  - `dev`
-  - `qa`
-  - `prod`
-- Uso de ramas de aporte con el formato `feat/...`.  
----
