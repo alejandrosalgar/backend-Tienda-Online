@@ -1,60 +1,70 @@
 # backend-Tienda-Online
 
-Sistema backend de tienda online desarrollado en Python con arquitectura modular, manejo de entidades, operaciones CRUD y conexión a base de datos.
-
-## Descripción
-
-Este proyecto es una aplicación de consola para la administración básica de una tienda online.  
-Permite el inicio de sesión o creación del primer usuario y, una vez autenticado, acceder a distintos módulos para gestionar:
-
-- Categorías
-- Productos
-- Pedidos
-- Pagos
-- Envíos
-- Usuarios
-
-El sistema está organizado en módulos CRUD y entidades, siguiendo una estructura más cercana a un backend real.
+Sistema backend de tienda online desarrollado en Python con arquitectura modular, ahora evolucionado a una *API REST con FastAPI*.
 
 ---
 
-## Características principales
+## 📌 Descripción
 
-- Inicio de sesión de usuarios
-- Creación del primer usuario si la base de datos está vacía
-- Menú principal interactivo por consola
-- CRUD de categorías
-- CRUD de productos
-- CRUD de pedidos
-- CRUD de pagos
-- CRUD de envíos
-- Persistencia de datos en base de datos
-- Código modular organizado por responsabilidades
+Este proyecto inició como una aplicación de consola para la administración de una tienda online y fue evolucionado a un *backend moderno basado en API REST*.
 
----
+Actualmente permite gestionar:
 
-## Tecnologías utilizadas
+* Usuarios
+* Categorías
+* Productos
+* Pedidos
+* Pagos
+* Envíos
 
-- **Python 3**
-- **SQLAlchemy**
-- **PostgreSQL / Neon** (según tu configuración actual)
-- **dotenv** para variables de entorno
-- **UUID** como identificadores
-- **Git y GitHub** para control de versiones
+A través de endpoints HTTP utilizando *FastAPI*, manteniendo una estructura modular basada en entidades y CRUD.
 
 ---
 
-## Video de explicación
+## 🚀 Características principales
 
-En el siguiente enlace se puede ver una explicación general del proyecto, su estructura, funcionamiento por consola y organización del código:
+### 🔹 Versión actual (API REST)
 
-**URL del video:** (https://www.canva.com/design/DAHDg0XRa9E/lPWWixcHax3KDGEXhryalQ/edit?utm_content=DAHDg0XRa9E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+* API REST con *FastAPI*
+* Documentación automática con *Swagger (OpenAPI)*
+* Endpoints para:
+
+  * Usuarios
+  * Categorías (incluye descripción)
+  * Productos
+  * Pedidos
+  * Pagos
+  * Envíos
+* CRUD completo por cada módulo
+* Validación de datos
+* Uso de UUID como identificadores
+* Arquitectura modular (entities + crud + routes)
+
+### 🔹 Versión anterior (consola)
+
+* Inicio de sesión de usuarios
+* Menú interactivo por consola
+* Creación automática del primer usuario
+* Gestión completa desde terminal
 
 ---
 
-## Estructura del proyecto
+## 🧱 Tecnologías utilizadas
 
-```bash
+* *Python 3*
+* *FastAPI*
+* *Uvicorn*
+* *SQLAlchemy*
+* *PostgreSQL / Neon*
+* *dotenv*
+* *UUID*
+* *Git y GitHub*
+
+---
+
+## 📂 Estructura del proyecto
+
+bash
 backend-Tienda-Online/
 │
 ├── src/
@@ -69,18 +79,97 @@ backend-Tienda-Online/
 │   ├── database/
 │   │   └── config.py
 │   │
-│   └── entities/
-│       ├── categoria.py
-│       ├── envio.py
-│       ├── pago.py
-│       ├── pedido.py
-│       ├── producto.py
-│       └── usuario.py
+│   ├── entities/
+│   │   ├── categoria.py
+│   │   ├── envio.py
+│   │   ├── pago.py
+│   │   ├── pedido.py
+│   │   ├── producto.py
+│   │   └── usuario.py
+│   │
+│   ├── routes/
+│   │   ├── categoria_routes.py
+│   │   ├── producto_routes.py
+│   │   └── usuario_routes.py
+│   │
+│   └── main.py
 │
 ├── .env
 ├── .gitignore
-├── main.py
+├── app_consola.py
 ├── migrarDb.py
 ├── README.md
 └── requirements.txt
 
+
+---
+
+## ▶️ Cómo ejecutar el proyecto
+
+### 1. Instalar dependencias
+
+bash
+py -m pip install -r requirements.txt
+
+
+---
+
+### 2. Ejecutar la API
+
+bash
+py -m uvicorn src.main:app --reload
+
+
+---
+
+### 3. Acceder a la documentación
+
+Swagger UI:
+
+👉 http://127.0.0.1:8000/docs
+
+---
+
+## 🧪 Ejemplo de uso
+
+### Crear usuario
+
+http
+POST /usuarios/
+
+
+Parámetros:
+
+* nombre_usuario
+* email
+* contrasena
+
+---
+
+### Crear categoría
+
+http
+POST /categorias/
+
+
+Parámetros:
+
+* nombre_categoria
+* descripcion
+
+---
+
+## 🎥 Video de explicación
+
+Se puede ver una explicación general del proyecto, estructura y funcionamiento:
+
+👉 https://drive.google.com/file/d/1zfUJb6TOeSHZ8JLoz04jnvm0B6dEsTKl/view?usp=sharing
+---
+
+## 📌 Notas finales
+
+* El proyecto evolucionó de una aplicación de consola a una API REST profesional.
+* Se mantiene separación de responsabilidades (CRUD, entidades, rutas).
+* Preparado para escalar a frontend o microservicios.
+
+---
