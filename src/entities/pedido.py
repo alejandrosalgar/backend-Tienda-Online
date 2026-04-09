@@ -1,8 +1,10 @@
 import uuid
 
+
 from sqlalchemy import Column, DateTime, Float, ForeignKey, func
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
+
 
 from src.database.config import Base
 
@@ -10,7 +12,7 @@ from src.database.config import Base
 class Pedido(Base):
     """Modelo de pedido"""
 
-    _tablename_ = "pedido"
+
 
     id_pedido = Column(
         UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True
