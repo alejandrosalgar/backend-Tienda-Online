@@ -1,3 +1,4 @@
+
 """
 Punto de entrada: inicio de sesión (o creación del primer usuario)
 y menú CRUD para Categoría, Producto y Pedido.
@@ -726,7 +727,6 @@ def main() -> None:
             menu_envios(usuario.id_usuario)
         else:
             print("Opción no válida.")
-
 
 if __name__ == "__main__":
     main()

@@ -1,10 +1,8 @@
 import uuid
 
-
 from sqlalchemy import Column, DateTime, ForeignKey, String, Text, func
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
-
 
 from src.database.config import Base
 
@@ -12,7 +10,7 @@ from src.database.config import Base
 class Categoria(Base):
     """Modelo de categoría"""
 
-    __tablename__ = "categoria"
+
 
     id_categoria = Column(
         UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True
