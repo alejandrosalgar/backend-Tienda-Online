@@ -12,7 +12,7 @@ from src.database.config import Base
 class Pedido(Base):
     """Modelo de pedido"""
 
-
+    __tablename__ = "pedido"
 
     id_pedido = Column(
         UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True
