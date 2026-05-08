@@ -19,7 +19,7 @@ from src.database.config import Base
 class Usuario(Base):
     """Modelo ORM Persona. Es quien crea/edita registros (trazabilidad)."""
 
-    _tablename_ = "usuario"
+    __tablename__ = "usuario"
 
     id_usuario = Column(
         PG_UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True

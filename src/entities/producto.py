@@ -10,7 +10,7 @@ from src.database.config import Base
 class Producto(Base):
     """Modelo de producto"""
 
-    _tablename_ = "producto"
+    __tablename__ = "producto"
 
     id_producto = Column(
         UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True
